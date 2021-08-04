@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const listImagesRef = document.querySelector('#gallery');
+
+const itemImages = images.map(option => {
+  const itemRef = `<li><img src = '${option.url}', alt = '${option.alt}', width = 640></li>`
+
+  return itemRef;
+});
+
+listImagesRef.insertAdjacentHTML('afterbegin', itemImages.join(' '));
+
+listImagesRef.setAttribute("style", "list-style:none; display: block; justify-content: space-around;")
